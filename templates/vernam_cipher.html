@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1> Vernam Cipher </h1>
+<article class="media content-section">
+    <div class="media-body">
+        <h3> Encryption using Vernam Cipher </h3>
+        <div class="media-body">
+            <form method="POST" action="">
+                <div class="form-group">
+                    <p> Enter Plaintext here: (Eg. Vernam) </p>
+                    <input class="form-control" type="text" name="encrypt_plaintext" placeholder="plaintext">
+                </div>
+                <div class="form-group">
+                    <p> Enter Key here (length of key must be less than length of plaintext): </p>
+                    <input class="form-control" type="text" name="encrypt_key" placeholder="key">
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+            </form>
+            {% if ciphertext %}
+                <div>
+                    <p> Encrypted Ciphertext: </p>
+                    <p class="Ciphertext"> {{ ciphertext }} </p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</article>
+<article class="media content-section">
+    <div class="media-body">
+        <h3> Decryption using Vernam Cipher</h3>
+        <div class="media-body">
+            <form method="POST" action="">
+                <div class="form-group">
+                    <p> Enter Ciphertext here: </p>
+                    <input class="form-control" type="text" name="decrypt_ciphertext" placeholder="ciphertext">
+                </div>
+                <div class="form-group">
+                    <p> Enter Key here: </p>
+                    <input class="form-control" type="text" name="decrypt_key" placeholder="key">
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+            </form>
+            {% if plaintext %}
+                <div>
+                    <p> Decrypted Plaintext: </p>
+                    <p class="Plaintext"> {{ plaintext }} </p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</article>
+
+<article class="media content-section">
+    <div class="media-body">
+        <h3> How does it work? </h3>
+        <div style="width:30em; justify-content: center; padding:15px;">
+            <img src="static/vernam_cipher.png" style="width: inherit;">
+        </div>
+        <ol>
+            <li> Choose a One-time Pad (eg. WORLD) </li>
+            <li> Choose a Plaintext (eg. HELLO) </li>
+            <li> Calculate the initial total </li>
+            <li> If initial total is more than 25, subtract 26 </li>
+            <li> With the new total, decode into alphabets </li>
+        </ol>
+    </div>
+</article>
+
+
+{% endblock content %}

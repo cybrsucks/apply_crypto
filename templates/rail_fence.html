@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1> Rail Fence </h1>
+<article class="media content-section">
+    <div class="media-body">
+        <h3> Encryption using Rail Fence Technique</h3>
+        <div class="media-body">
+            <form method="POST" action="">
+                <div class="form-group">
+                    <p> Enter Plaintext here: </p>
+                    <input class="form-control" type="text" name="encrypt_plaintext" placeholder="plaintext">
+                </div>
+                <div class="form-group">
+                    <p> Enter Key here: </p>
+                    <input class="form-control" type="text" name="encrypt_key" placeholder="key">
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+            </form>
+            {% if ciphertext %}
+            <div>
+                <p> Encrypted Ciphertext: </p>
+                <p class="Ciphertext"> {{ ciphertext }} </p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</article>
+<article class="media content-section">
+    <div class="media-body">
+        <h3> Decryption using Rail Fence</h3>
+        <div class="media-body">
+            <form method="POST" action="">
+                <div class="form-group">
+                    <p> Enter Ciphertext here: </p>
+                    <input class="form-control" type="text" name="decrypt_ciphertext" placeholder="ciphertext">
+                </div>
+                <div class="form-group">
+                    <p> Enter Key here: </p>
+                    <input class="form-control" type="number" name="decrypt_key" placeholder="key">
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+            </form>
+            {% if plaintext %}
+            <div>
+                <p> Decrypted Plaintext: </p>
+                <p class="Plaintext"> {{ plaintext }} </p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</article>
+<article class="media content-section">
+    <div class="media-body">
+        <h3> How does it work? </h3>
+        <div style="width:30em; justify-content: center; padding:15px;">
+            <img src="static/rail_fence.png" style="width: inherit;">
+        </div>
+        <p style="text-align:center;font-size:9px;color:grey;"> Image taken from Applied Cryptography Slides Topic 2</p>
+        <ol>
+            <li> Choose how many rails (eg. 2) </li>
+            <li> Choose a plaintext (eg. HELLOWORLD) </li>
+            <li> Write the plaintext message as a sequence of diagonals, as seen in the diagram. </li>
+        </ol>
+        <ul>
+            <li> If we write the plaintext in diagonals, </li>
+            <li> First rail =  HLOOL </li>
+            <li> Second rail = ELWRD </li>
+            <li> First rail + Second rail = HLOOLELWRD </li>
+        </ul>
+    </div>
+</article>
+
+
+{% endblock content %}

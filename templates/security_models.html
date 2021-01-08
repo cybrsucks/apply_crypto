@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1> Security Models </h1>
+<article class="media content-section">
+    <div class="media-body">
+        <div style="align-items: center; justify-content: center;">
+            <h3>What are the 4 approaches to implementing a security model?</h3>
+            <ol>
+                <li>No security</li>
+                <ul>
+                    <li>We use the system "as is" or "out of the box"</li>
+                    <li>We use the system with the default security configuration</li>
+                    <li>We do not need to use additional security protection</li>
+                </ul>
+                <li>Security thru Obscurity</li>
+                <ul>
+                    <li>We secure confidential information by hiding them</li>
+                </ul>
+                <li>Host Security</li>
+                <ul>
+                    <li>We provide security by protecting the host</li>
+                    <li> E.g. we can provide user authentication and access control</li>
+                </ul>
+                <li>Network Security</li>
+                <ul>
+                    <li>We protect the network</li>
+                    <li>E.g. we can encrypt the communication channel</li>
+                </ul>
+            </ol>
+        </div>
+    </div>
+</article>
+
+{% endblock content %}

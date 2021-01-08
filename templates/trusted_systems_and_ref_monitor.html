@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--<i class="fa fa-desktop fa-spin" style="font-size:60px;"></i>-->
+<h1> Trusted Systems and Reference Monitor </h1>
+<article class="media content-section">
+    <div class="media-body">
+        <div style="align-items: center; justify-content: center;">
+            <h3>What is a Trusted System?</h3>
+            <ul>
+                <li>A computer system that can be trusted to a specified extent to <span
+                        style="text-decoration:underline;">enforce a specified security policy</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</article>
+<article class="media content-section">
+    <div class="media-body">
+        <div style="align-items: center; justify-content: center;">
+            <h3>What is a Reference Monitor?</h3>
+            <ul>
+                <li>Entity at the heart of the system</li>
+                <li>Responsible for all decisions related to <span
+                        style="text-decoration:underline;">access controls</span></li>
+            </ul>
+            <div style="width:30em; justify-content: center; padding:15px;"><img src="static/ReferenceMonitor.png"
+                                                                                 style="width: inherit;"></div>
+        </div>
+        <p>Suppose a subject would like to request for an action on an object,
+            The reference monitor will check the request to determine if the subject has the
+            privilege to do so.
+            If he has, access is granted. If not, access is denied.
+        </p>
+        <p>
+            For this example, the owner requests for access to the admin side which the Reference Monitor checks if
+            he/she is allowed access to it. Since the owner is allowed access to it, the Reference Monitors authorises
+            his/her request.
+        </p>
+        <p>
+            On the other hand, the customer requested to enter the admin side is not authorised and thus, the Reference
+            Monitors rejects the customer's request.
+        </p>
+    </div>
+</article>
+<article class="media content-section">
+    <div class="media-body">
+        <div style="align-items: center; justify-content: center;">
+            <h3>What are the 3 characteristics of a Reference Monitor?</h3>
+            <ol>
+                <li>Should be <span
+                        style="text-decoration:underline;">tamperproof</span></li>
+                <li>Should always be <span
+                        style="text-decoration:underline;">invoked</span></li>
+                <li>Should be <span
+                        style="text-decoration:underline;">small enough</span> so that it can be independently tested
+                </li>
+            </ol>
+        </div>
+    </div>
+</article>
+
+{% endblock content %}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <title>Home</title>
+</head>
+<body>
+<header class="site-header">
+    <nav class="navbar navbar-dark navbar-expand-md fixed-top" style="background-color: #db5441;">
+        <div class="container">
+            <a class="navbar-brand mr-4" href="/">Applied Crypto</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+                    aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+                <div class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link navbar-item" href="/about">About</a>
+<!--                    <a class="nav-item nav-link navbar-item" href="/documentation">Documentation</a>-->
+                </div>
+
+                <div class="br3 bg-pink7 ph4 pv3 lh0 bb br bw2 b--black-20 white tc mb4 clicky-clicky"
+                     onmousedown="clicky_clicky()" onmouseup="clicky_end()">
+                    <span class="fw6 f4 ml3 pointer hello">1</span>
+                </div>
+
+                <!-- Navbar Right Side -->
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link"></a>
+                    <a class="nav-item nav-link"></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="content-section">
+                <h3>The Sidebar</h3>
+                <p class='text-muted'> Please use this sidebar to help you navigate to the different webpages :)</p>
+                <h5 class="subdivider-header"> Topic 1: Need for Information Security </h5>
+                <ul class="list-group">
+                    <a href="/need_for_security">
+                        <li class="list-group-item list-group-item-light navbar_list_item "
+                            style="background-color:#FF9AA2; color:#6C6678;">
+                            Need For Security
+                        </li>
+                    </a>
+                    <a href="/trusted_systems_and_reference_monitor">
+                        <li class="list-group-item list-group-item-light navbar_list_item"
+                            style="background-color:#FFB7B2; color:#6C6678;">
+                            Trusted Systems and Reference Monitor
+                        </li>
+                    </a>
+                    <a href="/security_models">
+                        <li class="list-group-item list-group-item-light navbar_list_item"
+                            style="background-color:#FFDAC1; color:#6C6678;">
+                            Security Models
+                        </li>
+                    </a>
+                    <a href="/security_management_practices">
+                        <li class="list-group-item list-group-item-light navbar_list_item"
+                            style="background-color:#E2F0CB; color:#6C6678;">
+                            Security Management Practices
+                        </li>
+                    </a>
+                    <a href="/types_of_attacks">
+                        <li class="list-group-item list-group-item-light navbar_list_item"
+                            style="background-color:#B5EAD7; color:#6C6678;">
+                            Types of Attacks
+                        </li>
+                    </a>
+                </ul>
+                <h5 class="subdivider-header"> Topic 2: Cryptography Concepts and Techniques </h5>
+                <ul class="list-group">
+                    <a href="/shift_cipher">
+                        <li class="list-group-item list-group-item-light navbar_list_item"
+                            style="background-color:#FF9AA2; color:#6C6678;">
+                            Shift Cipher
+                        </li>
+                    </a>
+                    <a href="/shift_cipher_more">
+                        <li class="list-group-item list-group-item-light navbar_list_item"
+                            style="background-color:#FFB7B2; color:#6C6678;">
+                            Shift Cipher Advanced
+                        </li>
+                    </a>
+                    <a href="/rail_fence">
+                        <li class="list-group-item list-group-item-light navbar_list_item"
+                            style="background-color:#FFDAC1; color:#6C6678;">
+                            Rail Fence Technique
+                        </li>
+                    </a>
+                    <a href="/vernam_cipher">
+                        <li class="list-group-item list-group-item-light navbar_list_item"
+                            style="background-color:#E2F0CB; color:#6C6678;">
+                            Vernam Cipher
+                        </li>
+                    </a>
+                </ul>
+                <h5 class="'subdivider-header"> Topic 3: Symmetric Algorithms </h5>
+                <ul class="list-group">
+                    <a href="/AES_Symmetric_Algorithms">
+                        <li class="list-group-item list-group-item-light navbar_list_item"
+                            style="background-color:#FF9AA2; color:#6C6678;">
+                            AES
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-8">
+            {% block content %}{% endblock %}
+
+        </div>
+    </div>
+</main>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script>
+    function clicky_clicky() {
+        var clicker = document.getElementsByClassName("clicky-clicky")[0]
+        clicker.classList.remove("bb");
+        clicker.classList.remove("br");
+        clicker.classList.remove("mb4");
+        clicker.classList.add("bl");
+        clicker.classList.add("bt");
+    }
+
+    function clicky_end() {
+        var clicker = document.getElementsByClassName("clicky-clicky")[0]
+        var value = document.getElementsByClassName("hello")[0].innerText
+        document.getElementsByClassName("hello")[0].innerText = parseInt(value) + 1
+        clicker.classList.add("bb");
+        clicker.classList.add("br");
+        clicker.classList.add("mb4");
+        clicker.classList.remove("bl");
+        clicker.classList.remove("bt");
+    }
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

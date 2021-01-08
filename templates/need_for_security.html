@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--<i class="fa fa-desktop fa-spin" style="font-size:60px;"></i>-->
+<h1> Need For Security </h1>
+<article class="media content-section">
+    <div class="media-body">
+        <div style="display:flex; padding: 20px; text-align:center; align-items: center; justify-content: center;">
+            <div><i class="fa fa-desktop" style="font-size: 60px;"></i>
+                <p> Client </p>
+            </div>
+            <p style="font-size: 30px; padding-top: 50px; padding: 10px;"> > </p>
+            <div style="width:auto; font-size: 0.7em;">
+                <div style="border: 1px solid black; padding:15px; width:auto;">
+                    <p> CustomerId: 123 </p>
+                    <p> OrderId: 345678901 </p>
+                    <p> CreditCardNo.: 4929 1979 2223 6603 </p>
+                    <p> Address: Ang Mo Kio Avenue 12 </p>
+                    <p> Valid Till: 06/26 </p>
+                </div>
+                <p style="color: blue;"> Credit Card Details </p>
+            </div>
+            <p style="font-size: 30px; padding-top: 50px; padding: 10px;"> > </p>
+            <div><i class="fa fa-desktop" style="font-size: 60px;"></i>
+                <p> Server </p>
+            </div>
+        </div>
+        <article class="media content-section">
+            <div class="media-body">
+                <p style="margin-bottom:0px;"> As seen from the diagram, confidential information (i.e Credit Card
+                    Details) are sent to the server
+                    in plaintext form, without any encryption whatsoever.
+                    This will greatly compromise the security of the customer's credit card information.
+                    An attacker can easily intercept the HTTP request and obtain the customer's credit card details.
+                </p>
+            </div>
+        </article>
+        <div style="display:flex; padding: 20px; text-align:center; align-items: center; justify-content: center;">
+            <div><i class="fa fa-desktop" style="font-size: 60px;"></i>
+                <p> Client </p>
+            </div>
+            <p style="font-size: 30px; padding-top: 50px; padding: 10px;"> > </p>
+            <div style="width:auto; font-size: 0.7em;">
+                <div style="border: 1px solid black; padding:15px; width:auto">
+                    <p> CustomerId: 123 </p>
+                    <p> OrderId: 345678901 </p>
+                    <p> CreditCardNo.: 4929 1979 2223 6603 </p>
+                    <p> Address: Ang Mo Kio Avenue 12 </p>
+                    <p> Valid Till: 06/26 </p>
+                </div>
+                <p style="color: blue;"> Credit Card Details </p>
+            </div>
+            <p style="font-size: 30px; padding-top: 50px; padding: 10px;"> > </p>
+            <div style="width:auto; font-size: 0.7em;">
+                <div style="border: 1px solid black; padding:15px; width:auto;">
+                    <p> 6741fdad42d0abffcba0985e4c079605 </p>
+                    <p> 0a26c36b3b5b55a0be5cc4fdaf961c4a </p>
+                    <p> febe9fafee71f6d22729de5d9d6ed588 </p>
+                    <p> 625c23643fd6000eb7c2cc3cfbb62e42 </p>
+                    <p> 0fc45b9db9273e399b908fa61e93194c </p>
+                </div>
+                <p style="color: blue;"> Encrypted Credit Card Details </p>
+            </div>
+            <p style="font-size:30px; padding-top: 50px; padding: 10px;"> > </p>
+            <div><i class="fa fa-desktop" style="font-size: 60px;"></i>
+                <p> Server </p>
+            </div>
+        </div>
+        <article class="media content-section">
+            <div class="media-body">
+                <p> Thus, to prevent hacking and to increase the security of transmission of confidential data, we use
+                    encryption methods that converts the data into text that is unreadable at first glance.</p>
+                <p> These days, large corporations and banks use hashes (eg. MD5, SHA-1) to encrypt their customer's confidential information before sending it to their servers to be validated. </p>
+                <p> For starters, we have simple encoding methods such as Shift Ciphers which can be easily decoded with simple algorithms.
+                    <a href="shift_cipher"> Click here to find out how your encrypted message will look like!</a></p>
+            </div>
+        </article>
+    </div>
+</article>
+
+{% endblock content %}

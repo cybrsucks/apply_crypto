@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1> AES Symmetric Algorithms </h1>
+<article class="media content-section" style="background:#C7CEEA;">
+    <div class="media-body">
+        <h3> AES Encryption </h3>
+        <div class="media-body">
+            <form method="POST">
+                <div class="form-group" style="background:#FF9AA2; padding: 20px;">
+                    <p> Enter Plaintext here: (Eg. JuliusCaesar) </p>
+                    <input required class="form-control" type="text" name="encrypt_plaintext" placeholder="plaintext">
+                </div>
+                <div class="form-group" style="background:#FFB7B2; padding: 20px;">
+                    <p> Cipher Mode: </p>
+                    <select class="form-control" name="cipher_mode">
+                        <option value="ECB">ECB</option>
+                        <option value="CBC" selected>CBC</option>
+                        <option value="CFB">CFB</option>
+                        <option value="OFB">OFB</option>
+                    </select>
+                </div>
+                <div class="form-group" style="background:#FFDAC1; padding: 20px;">
+                    <p> Key Size: </p>
+                    <select class="form-control" name="key_size">
+                        <option value="128" selected>128</option>
+                        <option value="192" >192</option>
+                        <option value="256">256</option>
+                    </select>
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+            </form>
+            {% if ciphertext %}
+            <div style="max-width:700px">
+                <p> Output: </p>
+                <div>
+                <p class="Ciphertext" style="overflow-wrap: break-word"> Ciphertext:  {{ ciphertext }} </p>
+                <p> IV:  {{ iv }} </p>
+                <p style="overflow-wrap: break-word"> Key:  {{key}}</p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</article>
+<article class="media content-section" style="background:#C7CEEA;">
+    <div class="media-body">
+        <h3> AES Decryption </h3>
+        <div class="media-body">
+            <form method="POST" action="">
+                <div class="form-group" style="background:#FF9AA2; padding: 20px;">
+                    <p> Enter Ciphertext here: </p>
+                    <input required class="form-control" type="text" name="decrypt_ciphertext" placeholder="ciphertext">
+                </div>
+                <div class="form-group" id="ECB_selected" style="background:#FFB7B2; padding: 20px;">
+                    <p> Enter Initial Value here: </p>
+                    <input class="form-control" type="text" name="decrypt_key" placeholder="initial value(IV)">
+                </div>
+                <div class="form-group" style="background:#FFDAC1; padding: 20px;">
+                    <p> Cipher Mode: </p>
+                    <select class="form-control" name="cipher_mode" onchange="ECB_disappear()" id="cipher_mode">
+                        <option value="ECB">ECB</option>
+                        <option value="CBC" selected>CBC</option>
+                        <option value="CFB">CFB</option>
+                        <option value="OFB">OFB</option>
+                    </select>
+                </div>
+                <div class="form-group" style="background:#E2F0CB; padding: 20px;">
+                    <p> Key: </p>
+                    <input required class="form-control" type="text" name="key_input" placeholder="key">
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+            </form>
+            {% if plaintext %}
+            <div style="max-width:700px">
+                <p> Output: </p>
+                <p class="Plaintext" style="overflow-wrap: break-word"> Plaintext:  {{ plaintext }} </p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</article>
+<script>
+    function ECB_disappear(){
+        if (document.getElementById("cipher_mode").value == "ECB") {
+            document.getElementById("ECB_selected").style.display = "none";
+        }
+        else{
+            document.getElementById("ECB_selected").removeAttribute("style")
+           document.getElementById("ECB_selected").style.background = "#FFB7B2";
+           document.getElementById("ECB_selected").style.padding = "20px";        }
+    }
+
+</script>
+
+{% endblock content %}
+
+
+<!--https://www.schemecolor.com/rainbow-pastels-color-scheme.php-->

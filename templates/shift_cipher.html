@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1> Shift Cipher </h1>
+<article class="media content-section">
+    <div class="media-body">
+        <h3> Encryption using Shift Cipher </h3>
+        <div class="media-body">
+            <form method="POST" action="">
+                <div class="form-group">
+                    <p> Enter Plaintext here: (Eg. JuliusCaesar) </p>
+                    <input class="form-control" type="text" name="encrypt_plaintext" placeholder="plaintext">
+                </div>
+                <div class="form-group">
+                    <p> Enter Key here: (Eg. 3, 7, -1) </p>
+                    <input class="form-control" type="number" name="encrypt_key" placeholder="key">
+                </div>
+                <!--            :c 'hmph' bug cat, pouting bug cat-->
+                <!--            sorry.. -->
+                <!--            oso i think i injured my knuckle playing osu :c ouch-->
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+            </form>
+            {% if ciphertext %}
+            <div>
+                <p> Encrypted Ciphertext: </p>
+                <p class="Ciphertext"> {{ ciphertext }} </p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</article>
+<article class="media content-section">
+    <div class="media-body">
+        <h3> Decryption using Shift Cipher</h3>
+        <div class="media-body">
+            <form method="POST" action="">
+                <div class="form-group">
+                    <p> Enter Ciphertext here: </p>
+                    <input class="form-control" type="text" name="decrypt_ciphertext" placeholder="ciphertext">
+                </div>
+                <div class="form-group">
+                    <p> Enter Key here: </p>
+                    <input class="form-control" type="number" name="decrypt_key" placeholder="key">
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+            </form>
+            {% if plaintext %}
+            <div>
+                <p> Decrypted Plaintext: </p>
+                <p class="Plaintext"> {{ plaintext }} </p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</article>
+<article class="media content-section">
+    <div class="media-body">
+        <h3> How does it work? </h3>
+        <div style="width:30em; justify-content: center; padding:15px;">
+            <img src="static/caesar_cipher.png" style="width: inherit;">
+        </div>
+        <p> In Caesar Cipher, the alphabet list is shifted by three.</p>
+        <p> D --> A </p>
+        <p> E --> B </p>
+        <p> F --> C </p>
+        <div style="width:30em; justify-content: center; padding:15px;">
+            <img src="static/caesar_cipher2.png" style="width: inherit;">
+        </div>
+        <p> In the diagram, the top alphabet list is the plaintext; </p>
+        <p> the bottom alphabet list is the ciphertext (alphabet list shifted by 3 spaces) </p>
+        <p> As such, plaintext <span style="font-style:italic;"> hello world </span> becomes ciphertext <strong> khoor zruog </strong></p>
+    </div>
+</article>
+
+{% endblock content %}

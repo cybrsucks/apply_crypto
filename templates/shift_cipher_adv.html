@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1> Shift Cipher Advanced </h1>
+<article class="media content-section">
+    <div class="media-body">
+        <h3> Encryption using Shift Cipher (with More!) </h3>
+        <div class="media-body">
+            <form method="POST" action="">
+                <div class="form-group">
+                    <p> Alphabet List: </p>
+                    <input class="form-control" type="text" name="alphabet_list"
+                           value="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=">
+                </div>
+                <div class="form-group">
+                    <p> Enter Plaintext here: (Eg. Hello!) </p>
+                    <input class="form-control" type="text" name="encrypt_plaintext" placeholder="plaintext">
+                </div>
+                <div class="form-group">
+                    <p> Enter Key here: (Eg. 3, 7, -1) </p>
+                    <input class="form-control" type="number" name="encrypt_key" placeholder="key">
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+            </form>
+            {% if ciphertext %}
+            <div>
+                <p> Encrypted Ciphertext: </p>
+                <p class="Ciphertext"> {{ ciphertext }} </p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</article>
+<article class="media content-section">
+    <div class="media-body">
+        <h3> Decryption using Shift Cipher (with more!) </h3>
+        <div class="media-body">
+            <form method="POST" action="">
+                <div class="form-group">
+                    <p> Alphabet List: </p>
+                    <input class="form-control" type="text" name="alphabet_list"
+                           value="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=">
+                </div>
+                <div class="form-group">
+                    <p> Enter Ciphertext here: </p>
+                    <input class="form-control" type="text" name="decrypt_ciphertext" placeholder="ciphertext">
+                </div>
+                <div class="form-group">
+                    <p> Enter Key here: </p>
+                    <input class="form-control" type="number" name="decrypt_key" placeholder="key">
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+            </form>
+            {% if plaintext %}
+            <div>
+                <p> Decrypted Plaintext: </p>
+                <p class="Plaintext"> {{ plaintext }} </p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</article>
+
+
+{% endblock content %}

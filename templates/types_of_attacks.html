@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1> Types of Attacks </h1>
+<article class="media content-section">
+    <div class="media-body">
+        <div style="align-items: center; justify-content: center;">
+            <h3>Passive Attacks </h3>
+
+            <img src="static/passive-attack-modified.jpg" style="padding: 20px">
+            <p style="text-align:center;font-size:9px;color:grey;"> Image credits to techdifferences.com</p>
+            <ul>
+                <li>Attackers eavesdrop or monitor data transmission</li>
+            </ul>
+            <ol>
+                <h4>The 2 sub-categories of passive attacks</h4>
+                <li>Release of message contents</li>
+                <ul>
+                    <li>The sender wants to send a private message or email to receiver.</li>
+                    <li>Passive attacker(interceptor) reads sender's message but does not modify the original message.
+                    </li>
+                    <li>By using encryption, a message could be masked in order to prevent the extraction of the
+                        information from the message, even if the message is captured.
+                    </li>
+                </ul>
+                <li>Traffic Analysis</li>
+                <ul>
+                    <li>The attacker sniff the network; and</li>
+                    <li>Attempt to analyze encoded messages to come up with likely patterns</li>
+                    <li>e.g. by using a protocol analyser.</li>
+                </ul>
+            </ol>
+        </div>
+    </div>
+</article>
+<article class="media content-section">
+    <div class="media-body">
+        <div style="align-items: center; justify-content: center;">
+            <h3>Active Attacks </h3>
+            <img src="static/active-attack-modified.jpg" style="padding: 20px">
+            <p style="text-align:center;font-size:9px;color:grey;"> Image credits to techdifferences.com</p>
+            <ul>
+                <li>Active attacks involves modification to the contents of the original message.</li>
+                <li>Emphasizes on the detection of the attack and recovery from any disruption or delay caused by it.
+                </li>
+            </ul>
+            <ol>
+                <h4>The 3 sub-categories of active attacks</h4>
+                <li>Interruption: affects availability of information systems</li>
+                <li>Modification: affects the integrity of a message</li>
+                <li>Fabrication: affects the authenticity of communication</li>
+            </ol>
+
+            <h6> Modification </h6>
+            <ul>
+                <li>Replay attack: the attacker captures and resends a message</li>
+                <ul>
+                    <li>For example, an attacker can gain access to a resource by resending authentication information
+                        to confuse the destination host
+                    </li>
+                </ul>
+                <li>Alteration: change original message</li>
+                <ul>
+                    <li>The attacker captures and modifies the content of original message</li>
+                </ul>
+            </ul>
+
+        </div>
+    </div>
+</article>
+<article class="media content-section">
+    <div class="media-body">
+        <div style="align-items: center; justify-content: center;">
+            <h3>Differences between Active and Passive Attacks </h3>
+            <table class="table table-bordered" style="border: 2.5px solid black">
+                <tr style="border: 1px solid black">
+                    <th style="border: 1px solid black;"></th>
+                    <th style="border: 1px solid black;">Active Attack</th>
+                    <th style="border: 1px solid black;">Passive Attack</th>
+                </tr>
+                <tr style="border: 1px solid black">
+                    <td style="border: 1px solid black;">Any modifications made to data?</td>
+                    <td style="border: 1px solid black;">Yes</td>
+                    <td style="border: 1px solid black;">No</td>
+                </tr>
+                <tr style="border: 1px solid black">
+                    <td style="border: 1px solid black;">Any harm done to the system?</td>
+                    <td style="border: 1px solid black;">Yes</td>
+                    <td style="border: 1px solid black;">No, but potentially in the future</td>
+                </tr>
+                <tr style="border: 1px solid black">
+                    <td style="border: 1px solid black;">Threat done?</td>
+                    <td style="border: 1px solid black;">Integrity and Availability</td>
+                    <td style="border: 1px solid black;">Confidentiality</td>
+                </tr>
+                <tr style="border: 1px solid black">
+                    <td style="border: 1px solid black;">Emphasises on?</td>
+                    <td style="border: 1px solid black;">Detection</td>
+                    <td style="border: 1px solid black;">Prevention</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</article>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+</style>
+
+
+{% endblock content %}

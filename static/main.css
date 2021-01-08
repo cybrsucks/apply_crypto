@@ -1,0 +1,145 @@
+body {
+  background: #b9a09d;
+  color: #333333;
+  margin-top: 5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: palevioletred;
+  margin-top: 10px;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.navbar-item:hover{
+    background-color: #b54640;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #e5dcdb;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.fa-spin{
+    animation: fa-spin 2s linear infinite;
+}
+
+.navbar_list_item:hover {
+    opacity: 0.6
+}
+
+/* Make it So test button */
+.bg-pink7 {
+    background-color: #d6336c;
+}
+
+.br {
+   border-right-style: solid;
+}
+
+.bb {
+    border-bottom-style: solid;
+}
+
+.b--black-20 {
+    border-color: rgba(0,0,0,0.2);
+}
+
+.br3 {
+    border-radius: .5rem;
+}
+
+.bw2 {
+    border-width: .25rem;
+}
+
+.pv3 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.ph4 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.tc {
+    text-align: center;
+}
+
+.white {
+    color: #fff;
+}
+
+.pointer{
+   cursor: pointer;
+}
+
+.bt{
+    border-top-style: solid;
+}
+
+.bl{
+    border-left-style: solid;
+}
+/* end Make it So */
